@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health Cost Mini-Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Health Cost Mini-Calculator</h1>
+    <p class="sub">Quick estimates by service, ZIP, and insurance type. No data saved.</p>
+  </header>
+
+  <main class="container card">
+    <form id="calcForm">
+      <div class="grid">
+        <label>
+          <span>Service</span>
+          <select id="service" required></select>
+        </label>
+
+        <label>
+          <span>ZIP code</span>
+          <input id="zip" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="e.g., 30303" required />
+        </label>
+
+        <label>
+          <span>Insurance</span>
+          <select id="ins">
+            <option value="insured">Insured</option>
+            <option value="high-deductible">High-deductible plan</option>
+            <option value="uninsured">Uninsured / cash</option>
+          </select>
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Estimate Cost</button>
+    </form>
+
+    <section id="result" class="result hidden"></section>
+
+    <section class="tips">
+      <h3>Money-saving tips</h3>
+      <ul id="tipsList"></ul>
+    </section>
+  </main>
+
+  <footer class="container muted">
+    <p>Estimates are rough ranges from public sources & sample data. Not medical advice.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
